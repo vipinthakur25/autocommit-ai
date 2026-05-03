@@ -100,6 +100,31 @@ After installation, every `git commit` (without `-m`) will open your editor with
 
 To uninstall the hook, simply delete `.git/hooks/prepare-commit-msg`.
 
+### Working with the Default Git Editor (Vim Survival Guide)
+
+When the hook opens your commit message in Vim (the default git editor on most systems), here's how to navigate it:
+
+| Want to... | Do this |
+|------------|---------|
+| Accept the message as-is | Press `Esc`, type `:wq`, press `Enter` |
+| Edit the message | Press `i` to enter insert mode, edit text, then press `Esc`, type `:wq`, press `Enter` |
+| Cancel the commit | Press `Esc`, type `:q!`, press `Enter` |
+
+**Prefer a friendlier editor?** You can switch git's default editor to something more familiar:
+
+```bash
+# Use VS Code
+git config --global core.editor "code --wait"
+
+# Use Notepad (Windows)
+git config --global core.editor notepad
+
+# Use nano (simpler than Vim)
+git config --global core.editor nano
+```
+
+After this, `git commit` will open the message in your chosen editor instead of Vim.
+
 ### Command-line options
 
 | Flag | Description |
